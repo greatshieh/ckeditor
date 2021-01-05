@@ -1,0 +1,11 @@
+.typo-em {
+  position: relative;
+}
+.typo-em:after {
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  content: '・';
+}

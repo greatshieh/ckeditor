@@ -4,7 +4,7 @@
  */
 
 // The editor creator to use.
-import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
+import ClassicEditorBase from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
 
 import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment.js";
 import Bold from "@ckeditor/ckeditor5-basic-styles/src/bold.js";
@@ -35,107 +35,106 @@ import InsertBlank from "./plugin/insertBlank/insertblank";
 
 import Emphasize from "./plugin/Emphasize/emphasize";
 
-import './lang/zh-cn'
+import "./lang/zh-cn";
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
-    Alignment,
-    Bold,
-    Essentials,
-    FontSize,
-    Heading,
-    HorizontalLine,
-    Image,
-    ImageResize,
-    ImageStyle,
-    ImageToolbar,
-    ImageUpload,
-    Indent,
-    IndentBlock,
-    Italic,
-    List,
-    ListStyle,
-    MathType,
-    Paragraph,
-    Table,
-    TableCellProperties,
-    TableProperties,
-    TableToolbar,
-    Underline,
-    InsertBlank,
-    Emphasize,
+  Alignment,
+  Bold,
+  Essentials,
+  FontSize,
+  Heading,
+  HorizontalLine,
+  Image,
+  ImageResize,
+  ImageStyle,
+  ImageToolbar,
+  ImageUpload,
+  Indent,
+  IndentBlock,
+  Italic,
+  List,
+  ListStyle,
+  MathType,
+  Paragraph,
+  Table,
+  TableCellProperties,
+  TableProperties,
+  TableToolbar,
+  Underline,
+  InsertBlank,
+  Emphasize,
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
-    toolbar: {
-        items: [
-          "heading",
-          "|",
-          "bold",
-          "italic",
-          "underline",
-          "fontsize",
-          "|",
-          'horizontalLine',
-          "bulletedList",
-          "numberedList",
-          "|",
-          "indent",
-          "outdent",
-          "|",
-          "alignment:left",
-          "alignment:right",
-          "alignment:center",
-          "|",
-          "imageUpload",
-          "insertTable",
-          "insertBlank",
-          "emphasize",
-          "|",
-          "MathType",
-          "ChemType",
-        ],
+  toolbar: {
+    items: [
+      "heading",
+      "|",
+      "bold",
+      "italic",
+      "underline",
+      "fontsize",
+      "|",
+      "imageUpload",
+      "insertTable",
+      "horizontalLine",
+      "insertBlank",
+      "emphasize",
+      "MathType",
+      "ChemType",
+      "|",
+      "bulletedList",
+      "numberedList",
+      "|",
+      "indent",
+      "outdent",
+      "|",
+      "alignment:left",
+      "alignment:right",
+      "alignment:center",
+    ],
+  },
+  heading: {
+    options: [
+      { model: "paragraph", title: "Paragraph", class: "ck-heading_paragraph" },
+      {
+        model: "heading1",
+        view: "h1",
+        title: "Heading 1",
+        class: "ck-heading_heading1",
       },
-      heading: {
-        options: [
-          { model: "paragraph", title: "Paragraph", class: "ck-heading_paragraph" },
-          {
-            model: "heading1",
-            view: "h1",
-            title: "Heading 1",
-            class: "ck-heading_heading1",
-          },
-          {
-            model: "heading2",
-            view: "h2",
-            title: "Heading 2",
-            class: "ck-heading_heading2",
-          },
-          {
-            model: "heading3",
-            view: "h3",
-            title: "Heading 3",
-            class: "ck-heading_heading3",
-          },
-        ],
+      {
+        model: "heading2",
+        view: "h2",
+        title: "Heading 2",
+        class: "ck-heading_heading2",
       },
-      image: {
-        toolbar: [
-          "imageTextAlternative",
-          "|",
-          "imageStyle:alignLeft",
-          "imageStyle:full",
-          "imageStyle:alignRight",
-          "|",
-          "imageResize",
-        ],
-        styles: ["full", "alignLeft", "alignRight"],
+      {
+        model: "heading3",
+        view: "h3",
+        title: "Heading 3",
+        class: "ck-heading_heading3",
       },
-      table: {
-        contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
-      },
-      language: "zh-cn",
+    ],
+  },
+  image: {
+    toolbar: [
+      "imageTextAlternative",
+      "|",
+      "imageStyle:alignLeft",
+      "imageStyle:full",
+      "imageStyle:alignRight",
+      "|",
+      "imageResize",
+    ],
+    styles: ["full", "alignLeft", "alignRight"],
+  },
+  table: {
+    contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
+  },
+  language: "zh-cn",
 };
